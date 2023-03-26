@@ -177,8 +177,6 @@ class RedisAndroid  {
 
       val stringBuilder = StringBuilder()
       val stringBuilderDebug = StringBuilder()
-      var i = 2
-      var value: String? = null
 
       if (options != null) {
         configs.putAll(options)
@@ -207,7 +205,9 @@ class RedisAndroid  {
         }
       }
 
-      for (key in configs.keySet()) {
+    var i = 2
+
+    for (key in configs.keySet()) {
         val valueObj = configs.get(key)
 
         if (valueObj is ArrayList<*>) {
@@ -220,7 +220,7 @@ class RedisAndroid  {
             }
           }
         } else {
-          value = valueObj.toString()
+          val value = valueObj.toString()
 
           if (value.isNotEmpty()) {
             stringBuilderDebug.append(String.format(Locale.US, "%02d: %s %s\n", i++, key, value))

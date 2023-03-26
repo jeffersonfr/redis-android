@@ -19,8 +19,8 @@ class MainActivity : AppCompatActivity() {
 
     GlobalScope.launch(Dispatchers.IO) {
       delay(2000)
-      Log.e("MyLog", "valor1: ${RedisService.set("foo", "21")}")
-      Log.e("MuLog", "valor2: ${RedisService.get("foo")}")
+      Log.e("MyLog", "set value[foo]: ${RedisService.set("foo", "21")}")
+      Log.e("MuLog", "get value[foo]: ${RedisService.get("foo")}")
     }
   }
 
