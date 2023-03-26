@@ -9,7 +9,10 @@
     android:roundIcon="@mipmap/ic_launcher_round"
     android:supportsRtl="true"
     android:theme="@style/AppTheme">
-    <activity android:name=".MainActivity">
+    <activity
+        android:name=".MainActivity"
+        android:enabled="true"
+        android:exported="true">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
 
@@ -17,8 +20,10 @@
       </intent-filter>
     </activity>
     <service
-      android:process=":redisServer"
-      android:name=".RedisService" />
+        android:name="io.wf9a5m75.redis.RedisService"
+        android:process=":redis_server"
+        android:permission="android.permission.BIND_JOB_SERVICE"
+        android:exported="true" />
   </application>
 
 </manifest>
